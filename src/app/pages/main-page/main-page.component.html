@@ -1,0 +1,43 @@
+<main class="container-page">
+  <section *ngIf="seeToast" class="toast">Producto agregado con exito</section>
+
+  <header class="header">
+    <h1 class="header__title">Productos</h1>
+
+    <img
+      src="../../../assets/icons/shopping-cart.png"
+      alt="Carrito de compras"
+      routerLink="compras"
+    />
+  </header>
+
+  <section class="body">
+    <div
+      class="card"
+      *ngFor="let product of products"
+      (onClick)="addProduct(product)"
+    >
+      <img [src]="product.image" alt="imagen del producto" />
+
+      <div class="card__info">
+        <h3>{{ product.name }}</h3>
+
+        <h4>
+          <strong>{{ product.discount | currency: "USD" }}</strong>
+
+          <span>
+            {{ product.price | currency: "USD" }}
+          </span>
+        </h4>
+      </div>
+
+      <div class="card__action">
+        <app-button
+          text="Agregar"
+          size="small"
+          (onClick)="addProduct(product)"
+        ></app-button>
+      </div>
+    </div>
+  </section>
+</main>

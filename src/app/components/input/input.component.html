@@ -1,0 +1,17 @@
+<div class="row">
+  <label class="row__label" [for]="id">{{ label }}</label>
+
+  <div class="row__input">
+    <img [src]="icon" alt="Icono de un sobre" />
+
+    <input
+      [type]="type"
+      [id]="id"
+      [name]="name"
+      [placeholder]="placeholder"
+      [autocomplete]="autocomplete"
+      [(ngModel)]="inputValue"
+      (blur)="saveValue()"
+    />
+  </div>
+</div>

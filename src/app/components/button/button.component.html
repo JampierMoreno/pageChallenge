@@ -1,0 +1,11 @@
+<button
+  class="button"
+  [ngStyle]="{
+    width: fulWidth ? '100%' : 'max-content',
+    height: size === 'big' ? '54px' : size === 'medium' ? '40px' : '30px'
+  }"
+  (click)="click()"
+  [type]="type"
+>
+  {{ text }}
+</button>

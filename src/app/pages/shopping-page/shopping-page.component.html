@@ -1,0 +1,111 @@
+<main class="shopping-page">
+  <header class="header">
+    <h1 class="header__title">Checkout</h1>
+  </header>
+
+  <section class="body">
+    <app-products-card></app-products-card>
+
+    <form class="body__forms">
+      <div class="form">
+        <h3 class="form__title">Contact infomation</h3>
+
+        <app-input
+          label="E-mail"
+          id="email"
+          name="email"
+          placeholder="Enter your email..."
+          (onBlur)="saveValueField($event, 'email')"
+          icon="../../../assets/icons/email.png"
+        ></app-input>
+
+        <app-input
+          label="Phone"
+          id="phone"
+          name="phone"
+          placeholder="Enter your phone..."
+          (onBlur)="saveValueField($event, 'phone')"
+          icon="../../../assets/icons/phone-call.png"
+        ></app-input>
+      </div>
+
+      <div class="form">
+        <h3 class="form__title">Shipping address</h3>
+
+        <app-input
+          label="Full name"
+          id="fullName"
+          name="fullName"
+          placeholder="Rodney Cotton"
+          (onBlur)="saveValueField($event, 'fullName')"
+          icon="../../../assets/icons/user.png"
+        ></app-input>
+
+        <app-input
+          label="Address"
+          id="address"
+          name="address"
+          placeholder="Your address.."
+          (onBlur)="saveValueField($event, 'address')"
+          icon="../../../assets/icons/home.png"
+        ></app-input>
+
+        <app-input
+          label="City"
+          id="city"
+          name="city"
+          placeholder="Your city.."
+          (onBlur)="saveValueField($event, 'city')"
+          icon="../../../assets/icons/flat.png"
+        ></app-input>
+
+        <div class="row">
+          <app-input
+            label="Country"
+            id="country"
+            name="country"
+            placeholder="Your country.."
+            (onBlur)="saveValueField($event, 'country')"
+            icon="../../../assets/icons/earth.png"
+          ></app-input>
+
+          <app-input
+            label="Postal code"
+            id="postalCode"
+            name="postalCode"
+            placeholder="Your postal code.."
+            (onBlur)="saveValueField($event, 'postalCode')"
+            icon="../../../assets/icons/buzon-de-correo.png"
+          ></app-input>
+        </div>
+
+        <div class="row">
+          <label for="saveData">
+            <input
+              (change)="handleCheck($event)"
+              type="checkbox"
+              name="saveData"
+              id="saveData"
+            />
+
+            <span>Save this information for next time</span>
+          </label>
+        </div>
+
+        <app-button
+          class="row--btn"
+          text="Continue"
+          size="big"
+          (onClick)="sendData()"
+          type="button"
+        ></app-button>
+      </div>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <h5 class="footer__message">
+      created by <span>username</span> - devChallenges.io
+    </h5>
+  </footer>
+</main>
